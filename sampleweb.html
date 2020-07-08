@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<body>
+<p style="font-size:18pt;">This is web view</p>
+<input id="inputField" style="height:35px;width:300px;font-size:16pt;" type="text" value="">
+<br><br>
+<input onClick="sendMessage()" style="height:35px;width:300px;font-size:16pt;" type="button"
+       value="Send data to app"/>
+
+<script type="text/javascript">
+    function sendMessage() {
+        console.log("sending message");
+		var valueReceived =  document.getElementById("inputField").value;
+		console.log("value received: "+valueReceived);
+        WebAppInterface.showMessageInApp(valueReceived);
+    }
+
+    function updateFromNative(message){
+		document.getElementById("inputField").value = message;
+    }
+
+
+</script>
+<style>
+	body {
+	background-color: #93B874
+	}
+
+
+</style>
+</body>
+</html>
